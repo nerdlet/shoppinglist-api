@@ -1,4 +1,4 @@
-import unittest2
+import unittest
 import os
 import json
 from app import create_app, db
@@ -14,11 +14,11 @@ class ShoppingListTestCase(unittest.TestCase):
         with self.app.app_context():
             db.create_all()
 
-     def tearDown(self):
-        """after tabels are created"""
-        with self.app.app_context():
-            db.session.remove()
-            db.drop_all()
+    """after tabels are created"""
+    def tearDown(self):
+    	with self.app.app_context():
+    		db.session.remove()
+    		db.drop_all()
 
 #make tests executable
 if __name__ == "__main__":
