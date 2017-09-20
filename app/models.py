@@ -1,5 +1,4 @@
 #third party pluggins
-#
 from datetime import datetime
 
 #local imports
@@ -49,7 +48,7 @@ class Item(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(128))
-    price = db.Column(db.varchar(128))
+    price = db.Column(db.Integer)
     creator = db.Column(db.String(64), db.ForeignKey(''))
     shoppinglist_id = db.Column(db.Integer, db.ForeignKey('shoppinglist_id'))
 
